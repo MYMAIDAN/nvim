@@ -4,7 +4,8 @@ require("plugin.cmp")
 -- require("gorg.plugin.neogit")
 require("plugin.treesitter")
 require("plugin.harpoon")
-
+-- require("plugin.telescop_project")
+require'telescope'.load_extension('project')
 require('lualine').setup({
     options = { theme = "gruvbox" }
 })

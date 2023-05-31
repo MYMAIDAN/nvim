@@ -16,6 +16,7 @@ return require("packer").startup(function()
     use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
+    use("nvim-telescope/telescope-project.nvim")
 
     -- LSP stuff
     -- use("williamboman/mason.nvim")
