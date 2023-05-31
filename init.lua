@@ -1,3 +1,5 @@
 require('options')
 require('keymap')
 require('plugins')
+require('colors')
+require('config_loader')

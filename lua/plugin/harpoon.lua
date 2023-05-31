@@ -1,4 +1,3 @@
-local nnoremap = require("gorg.keymap").nnoremap
 
 local silent = { silent = true }
 
