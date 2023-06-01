@@ -9,6 +9,10 @@ require'telescope'.load_extension('project')
 require('lualine').setup({
     options = { theme = "gruvbox" }
 })
+require("toggleterm").setup{
+    size = 100,
+    direction = 'vertical'
+}
 require('gitsigns').setup()
 
 local autocmd = vim.api.nvim_create_autocmd
