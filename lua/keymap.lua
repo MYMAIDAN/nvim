@@ -39,6 +39,6 @@ vnoremap("J", ":m '>+1<CR>gv=gv")
 
 -- Utils
 nnoremap("<leader>g", "<cmd>Neogit<CR>")
-nnoremap("<C-l>", "<cmd>Telescope project<CR>")
+nnoremap("<leader>fp", "<cmd>Telescope project<CR>")
 nnoremap("<C-t>", "<cmd>ToggleTerm<CR>")
 tnoremap("<C-t>", "<cmd>ToggleTerm<CR>")
