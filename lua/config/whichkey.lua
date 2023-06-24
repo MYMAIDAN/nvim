@@ -52,7 +52,12 @@ function M.setup()
       c = { "<cmd>FzfLua commands<cr>", "Commands" },
       e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
       p = { "<cmd>Telescope project<CR>", "Project Manager" },
-      l = { "<cmd>lua require('config.toggleterm').docker_client_toggle()<cr>", "LazyDocker" }
+    },
+
+    t = {
+        name = "Terminal",
+        d = { "<cmd>lua require('config.toggleterm').docker_client_toggle()<cr>", "LazyDocker" },
+        g = { "<cmd>lua require('config.toggleterm').gitui_client_toggle()<cr>", "Gitui" },
     },
 }
 

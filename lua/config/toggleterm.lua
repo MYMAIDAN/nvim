@@ -31,9 +31,25 @@ local docker_client = Terminal:new {
   },
 }
 
+
+local gitui_client = Terminal:new {
+    cmd = "gitui",
+    dir = "git_dir",
+    hidden = true,
+    direction = "float",
+    float_opts = {
+        border = "double",
+    },
+}
+
 function M.docker_client_toggle()
   docker_client:toggle()
 end
+
+function M.gitui_client_toggle()
+    gitui_client:toggle()
+end
+
 
 return M
 
