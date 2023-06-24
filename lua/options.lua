@@ -1,8 +1,10 @@
+-- map leader to <Space>
+vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
+vim.g.mapleader = " "
 -- Hint: use `:h <option>` to figure out the meaning if needed
-vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
+vim.opt.clipboard = 'unnamedplus'   -- use system clipboard
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
-
 -- Tab
 vim.opt.tabstop = 4                 -- number of visual spaces per TAB
 vim.opt.softtabstop = 4             -- number of spacesin tab when editing
@@ -23,4 +25,16 @@ vim.opt.incsearch = true            -- search as characters are entered
 vim.opt.hlsearch = false            -- do not highlight matches
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
+vim.opt.autochdir = true
+-- vim.opt.autochdir=true
+local api = vim.api
+local g = vim.g
+local opt = vim.opt
 
+-- Highlight on yank
+vim.cmd [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]]

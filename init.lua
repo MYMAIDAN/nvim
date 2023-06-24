@@ -1,3 +1,2 @@
-require('options')
-require('keymap')
-require('plugins')
+require("plugins").setup()
+require("options")
