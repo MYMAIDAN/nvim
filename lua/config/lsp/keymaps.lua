@@ -15,30 +15,16 @@ local function keymappings(client, bufnr)
   keymap("n", "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
   keymap("n", "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
 
-  -- Whichkey
-  local keymap_l = {
-    l = {
-      name = "Code",
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-      d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
-      i = { "<cmd>LspInfo<CR>", "Lsp Info" },
-    },
-  }
-  if client.resolved_capabilities.document_formatting then
-    keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
-  end
+  keymap("n","<leader>lr","<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  keymap("n","<leader>la","<cmd>lua vim.lsp.buf.code_action()<CR>",opts)
+  keymap("n","<leader>ld","<cmd>lua vim.diagnostic.open_float()<CR>",opts)
+  keymap("n","<leader>li","<cmd>LspInfo<CR>",opts)
 
-  local keymap_g = {
-    name = "Goto",
-    d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-    D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-    s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-    I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
-    t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-  }
-  whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
-  whichkey.register(keymap_g, { buffer = bufnr, prefix = "g" })
+  keymap("n","gd","<cmd>lua vim.lsp.buf.definition()<CR>",opts)
+  keymap("n","gD","<cmd>lua vim.lsp.buf.declaration()<CR>",otps)
+  keymap("n","gs","<cmd>lua vim.lsp.buf.signature_help()<CR>",opts)
+  keymap("n","gI","<cmd>lua vim.lsp.buf.implementation()<CR>",opts)
+  keymap("n","gt","<cmd>lua vim.lsp.buf.type_definition()<CR>",opts)
 end
 
 function M.setup(client, bufnr)

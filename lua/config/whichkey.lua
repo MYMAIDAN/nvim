@@ -38,10 +38,6 @@ function M.setup()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    g = {
-      name = "Git",
-      s = { "<cmd>Neogit<CR>", "Status" },
-    },
   
     f = {
       name = "Find",
@@ -73,7 +69,10 @@ function M.setup()
 
     local c_mappings = {
         ["<C-b>"] = { "<cmd>NvimTreeToggle<CR>","Explorer" },
-        ["<C-s>"] = { "<cmd>:w<CR>","Save"}
+        ["<C-s>"] = { "<cmd>:w<CR>","Save" },
+        ["<C-y>"] = { "<cmd>Telescope live_grep<CR>", "Search" },
+        ["<C-p>"] = { "<cmd>Telescope git_files<CR>", "Find File" }
+        
     }
 
 
